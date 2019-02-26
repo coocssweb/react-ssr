@@ -12,7 +12,6 @@ export default function () {
                     </Route>
                 </div>
             </Router>
-            <DevTool />
         </div>
     );
 };

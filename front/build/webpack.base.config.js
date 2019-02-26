@@ -27,10 +27,10 @@ module.exports = function (mode) {
                     test: /\.jsx?$/,
                     include: resolve('src'),
                     loader: 'babel-loader',
-                    options: {
+                    options: IS_DEVELOPMENT ? {
                         cacheDirectory: true,
                         plugins: ['react-hot-loader/babel'],
-                    }
+                    } : {}
                 },
                 // 代码格式检查
                 {
@@ -138,7 +138,7 @@ module.exports = function (mode) {
         // 公共代码
         webpackConfig.optimization = {
             splitChunks: {
-                chunks: 'initial',
+                chunks: 'all',
                 minSize: 0,
                 maxAsyncRequests: 5,
                 maxInitialRequests: 3,
@@ -149,6 +149,13 @@ module.exports = function (mode) {
                         test: /[\\/]src\/common[\\/]/,
                         chunks: 'all',
                         name: 'common',
+                        minChunks: 1,
+                        priority: 10
+                    },
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        chunks: 'all',
+                        name: 'vendor',
                         minChunks: 1,
                         priority: 10
                     }

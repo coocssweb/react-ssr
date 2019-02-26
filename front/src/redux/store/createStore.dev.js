@@ -1,14 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from '../middlewares/promiseMiddleware';
 import RootReducer from '../reducers';
-import DevTool from '@containers/devTool';
 
 export default (data) => {
     const enhancer = compose(
         applyMiddleware(
             promiseMiddleware
         ),
-        DevTool.instrument()
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
 
     let finalCreateStore = enhancer(createStore);

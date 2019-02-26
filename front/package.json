@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --config build/webpack.dev.config.js --open --hot",
-    "build:test": "webpack -p --config build/webpack.test.config.js --progress --hide-modules"
+    "build:test": "webpack -p --mode production build/webpack.test.config.js --progress --hide-modules",
+    "build": "webpack -p --mode production --config build/webpack.production.config.js --progress --hide-modules"
   },
   "author": "",
   "license": "ISC",
@@ -46,6 +47,10 @@
     "postcss-loader": "^3.0.0",
     "postcss-px2rem": "^0.3.0",
     "react-hot-loader": "^4.7.1",
+    "redux-devtools": "^3.4.1",
+    "redux-devtools-dock-monitor": "^1.1.3",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-devtools-log-monitor": "^1.4.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
@@ -66,10 +71,6 @@
     "react-router-dom": "^4.3.1",
     "react-transition-group": "^2.5.0",
     "redux": "^4.0.1",
-    "redux-devtools": "^3.4.1",
-    "redux-devtools-dock-monitor": "^1.1.3",
-    "redux-devtools-extension": "^2.13.5",
-    "redux-devtools-log-monitor": "^1.4.0",
     "redux-immutablejs": "^0.0.8",
     "redux-logger": "^3.0.6",
     "redux-router": "^2.1.2",

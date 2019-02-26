@@ -30,5 +30,5 @@ module.exports = {
         imagePath: '',                          // 图片资源地址
         port: '8088',                           // 开发端口
         devtool: 'source-map',                  // devtool
-    },
-}
+    }
+};

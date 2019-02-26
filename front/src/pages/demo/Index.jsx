@@ -11,6 +11,7 @@ class Index extends Component {
     render() {
         return (
             <div className="">
+                <div className={className('test')}>Tesst</div>
             </div>
         );
     }
