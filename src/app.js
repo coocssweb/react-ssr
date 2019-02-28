@@ -8,7 +8,7 @@ import Root from './root/route';
 import './common';
 const store = createStore(Immutable.fromJS({}));
 
-ReactDOM.render(
+ReactDOM.hydrate(
     <Provider store={ store } >
         <Root />
     </Provider>,

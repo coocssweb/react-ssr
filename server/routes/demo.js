@@ -6,6 +6,7 @@ let router = new Router({
 });
 
 router.get('/', demoControl.home);
-router.get('demo', demoControl.demo);
+router.get('column', demoControl.column);
+router.get('detail/:id', demoControl.detail);
 
 export default router;

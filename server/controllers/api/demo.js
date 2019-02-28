@@ -1,12 +1,31 @@
 import demoApi from '../../api/demo.js';
 
-// 创建订单
-let fetchOne = async (ctx, next) => {
-    let result = await demoApi.fetchOne();
+// 获取主页相关
+let fetchHome = async (ctx, next) => {
+    let { id } = ctx.params;
+    let result = await demoApi.fetchColumn();
+    ctx.body = JSON.stringify(result);
+    await next();
+};
+
+// 获取栏目信息
+let fetchColumn = async (ctx, next) => {
+    let { id } = ctx.params;
+    let result = await demoApi.fetchColumn();
+    ctx.body = JSON.stringify(result);
+    await next();
+};
+
+// 获取一部电影
+let fetchOneMovie = async (ctx, next) => {
+    let { id } = ctx.params;
+    let result = await demoApi.fetchOneMovie(id);
     ctx.body = JSON.stringify(result);
     await next();
 };
 
 export default {
-    fetchOne
+    fetchHome,
+    fetchColumn,
+    fetchOneMovie
 };

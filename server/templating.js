@@ -29,15 +29,14 @@ function createEnv(path, opts) {
 function template(path, opts) {
     let ENV = createEnv(path, opts);
     return async (ctx, next) => {
-        const context = {};
-        const reactDom = renderToString(
-            <StaticRouter location={ctx.request.url} context={context}>
-                <Layout />
-            </StaticRouter>
-        );
         ctx.render = function (view, model) {
             try {
-                ctx.response.body = ENV.render(view, Object.assign({ layout: reactDom }, ctx.state || {}, model || {}));
+                const reactDom = renderToString(
+                    <StaticRouter location={ctx.request.url} context={model.data}>
+                        <Layout />
+                    </StaticRouter>
+                );
+                ctx.response.body = ENV.render(view, Object.assign({ layout: reactDom }, ctx.state || {}, model.seo || {}, {data: model.data}));
             } catch (err) {
                 console.log(err);
                 ctx.response.body = ENV.render(view, {meta: err});

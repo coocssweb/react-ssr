@@ -3,8 +3,22 @@
  * 用于定于全局基础颜色、基础size
  */
 // 全局宽度
-$globalWidth: 1000px;
+$globalWidth: 750px;
+$globalBgColor: #f6f6f6;
 
 // 颜色
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorBlackLite: #333;
+$colorGray: #999;
+$colorGrayLite: #ccc;
+$colorGreen: #42bd56;
+$colorGreenLite: #effaf0;
+$colorOrange: #ffb712;
 
 // 大小
+$sizeXS: 12px;
+$sizeS: 14px;
+$sizeM: 16px;
+$sizeL: 24px;
+$sizeXL: 32px;

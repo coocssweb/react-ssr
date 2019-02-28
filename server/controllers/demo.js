@@ -10,9 +10,20 @@ let home = async function (ctx, next) {
     await next();
 };
 
-// 演示页
-let demo = async function (ctx, next) {
-    let result = await demoApi.fetchDemo();
+// 栏目
+let column = async  function (ctx, next) {
+    let result = await demoApi.fetchColumn();
+    await ctx.render('index.html', {
+        ...result
+    });
+
+    await next();
+};
+
+// 详细
+let detail = async  function (ctx, next) {
+    const { id } = ctx.params;
+    let result = await demoApi.fetchOneMovie(id);
     await ctx.render('index.html', {
         ...result
     });
@@ -22,5 +33,6 @@ let demo = async function (ctx, next) {
 
 module.exports = {
     home,
-    demo
+    column,
+    detail
 };

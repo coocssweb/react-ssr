@@ -2,9 +2,10 @@ import Router from 'koa-router';
 import ApiControl from '../../controllers/api/demo';
 
 let router = new Router({
-    prefix: '/api/demo'
+    prefix: '/api'
 });
-
-router.get('/list', ApiControl.fetchOne);
+router.get('/home', ApiControl.fetchHome);
+router.get('/column', ApiControl.fetchColumn);
+router.get('/movie', ApiControl.fetchOneMovie);
 
 export default router;
