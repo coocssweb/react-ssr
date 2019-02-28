@@ -3,7 +3,7 @@
  */
 import Base from './base';
 class Demo extends Base {
-    fetchOne () {
+    fetchHome () {
         return this.request({ path: '' });
     }
 }

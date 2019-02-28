@@ -7,21 +7,20 @@ import { Movie } from '../../components';
 class Index extends Component {
     constructor(props) {
         super(props);
-        const { staticContext = {} } = props;
         this.state = {
-            bannerPhoto: staticContext.banner || window['defaultData'].banner,
-            movies: staticContext.movies || window['defaultData'].movies
+            banner: props.banner,
+            movies: props.movies
         };
     }
 
     render() {
         const { state } = this;
-        let bannerPhoto = state.banner;
+        let banner = state.banner;
         let movies = state.movies;
         return (
             <div className={className('home')}>
                 <section className={className('homeBanner')}>
-                    <img src={bannerPhoto} className={className('homeBanner-photo')} />
+                    <img src={banner} className={className('homeBanner-photo')} />
                 </section>
                 <section className={className('homeNav')}>
                     <NavLink to="/" className={className('homeNav-link')}>

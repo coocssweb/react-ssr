@@ -1,4 +1,0 @@
-// 获取测试数据
-export const DEMO_FETCH_REQUEST = 'DEMO_FETCH_REQUEST';
-export const DEMO_FETCH_SUCCESS = 'DEMO_FETCH_SUCCESS';
-export const DEMO_FETCH_ERROR = 'DEMO_FETCH_ERROR';

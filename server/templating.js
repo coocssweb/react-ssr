@@ -3,7 +3,9 @@ import nunjucks from 'nunjucks';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router'
+import { Provider } from "react-redux";
 import Layout from '../src/layout';
+import createStore from '../src/redux/store/createStore';
 
 function createEnv(path, opts) {
     let autoescape = opts.autoescape === undefined ? true : opts.autoescape;
@@ -31,12 +33,24 @@ function template(path, opts) {
     return async (ctx, next) => {
         ctx.render = function (view, model) {
             try {
+                const store = createStore(model.data);
                 const reactDom = renderToString(
-                    <StaticRouter location={ctx.request.url} context={model.data}>
-                        <Layout />
-                    </StaticRouter>
+                    <Provider store={ store }>
+                        <StaticRouter location={ctx.request.url} context={model.data}>
+                            <Layout />
+                        </StaticRouter>
+                    </Provider>
                 );
-                ctx.response.body = ENV.render(view, Object.assign({ layout: reactDom }, ctx.state || {}, model.seo || {}, {data: model.data}));
+
+                ctx.response.body = ENV.render(view, Object.assign(
+                        // layout组件节点渲染结果
+                        { layout: reactDom },
+                        // seo相关
+                        model.seo || {},
+                        // 服务端渲染的数据
+                        { data: model.data || { home: {} } }
+                    )
+                );
             } catch (err) {
                 console.log(err);
                 ctx.response.body = ENV.render(view, {meta: err});

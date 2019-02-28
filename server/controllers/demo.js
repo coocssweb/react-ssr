@@ -4,7 +4,10 @@ import demoApi from '../api/demo';
 let home = async function (ctx, next) {
     let result = await demoApi.fetchHome();
     await ctx.render('index.html', {
-        ...result
+        seo: result.seo,
+        data: {
+            home: result.data
+        }
     });
 
     await next();
@@ -14,7 +17,10 @@ let home = async function (ctx, next) {
 let column = async  function (ctx, next) {
     let result = await demoApi.fetchColumn();
     await ctx.render('index.html', {
-        ...result
+        seo: result.seo,
+        data: {
+            column: result.data
+        }
     });
 
     await next();

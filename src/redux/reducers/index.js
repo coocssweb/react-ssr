@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux-immutablejs';
-import demo from './demo';
+import { combineReducers } from 'redux';
+import home from './home';
 
 export default combineReducers({
-    demo
+    home
 });

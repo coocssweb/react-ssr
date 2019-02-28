@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import propTypes from 'prop-types';
 import className from 'classnames';
 import { Route, NavLink, Switch } from 'react-router-dom';
-// import Home from '@containers/home';
+import Home from '../containers/home';
 // import Demo from '@containers/demo';
-import Home from '../pages/home';
+// import Home from '../pages/home';
 import Column from '../pages/column';
 import Detail from '../pages/detail';
 

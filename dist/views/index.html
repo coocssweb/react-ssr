@@ -17,7 +17,7 @@
 <body>
 {{ layout | safe }}
 <script>
-    window['defaultData'] = {{ data | dump | safe }};
+    window['defaultRenderData'] = {{ data | dump | safe }};
 </script>
 <script type="text/javascript" src="http://localhost:8088/index.js"></script></body>
 </body>

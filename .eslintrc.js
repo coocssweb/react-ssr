@@ -23,7 +23,7 @@ module.exports = {
     },
     // add your custom rules here
     'rules': {
-        'indent': ['warn', 4],
+        'indent': ['warn', 4, { SwitchCase: 1 }],
         'semi': ['warn', 'always'],
         'camelcase': 0,
         'comma-dangle': ['error', {
