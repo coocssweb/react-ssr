@@ -1,3 +1,4 @@
+// import './index.scss';
 import React, {Component} from 'react';
 import propTypes from 'prop-types';
 import className from 'classnames';
@@ -13,10 +14,10 @@ class Index extends Component {
         const { props } = this;
         return (
             <NavLink to={`/detail/${props.id}`} className={className('movie')}>
-                <img src={props.photo} className={className('movie-photo')} />
+                <div style={{ backgroundImage: `url(${props.photo})` }} className={className('movie-photo')} />
                 <div className={className('movie-info')}>
                     <h3 className={className('movie-title')}>{ props.title }</h3>
-                    <div className={className('movie-rating')}>{ props.score }</div>
+                    <div className={className('movie-rating')}>{ props.score } 分</div>
                 </div>
             </NavLink>
         );

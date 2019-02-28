@@ -24,19 +24,19 @@ class Index extends Component {
                 </section>
                 <section className={className('homeNav')}>
                     <NavLink to="/" className={className('homeNav-link')}>
-                        <div className={className('homeNav-icon')}></div>
+                        <div className={className('homeNav-icon homeNav-icon--home')}></div>
                         <div className={className('homeNav-name')}>影院首页</div>
                     </NavLink>
-                    <NavLink to="/column" className={className('homeNav-link')}>
-                        <div className={className('homeNav-icon')}></div>
+                    <NavLink to="#" className={className('homeNav-link')}>
+                        <div className={className('homeNav-icon homeNav-icon--column')}></div>
                         <div className={className('homeNav-name')}>精彩栏目</div>
                     </NavLink>
-                    <NavLink to="javascript:;" className={className('homeNav-link')}>
-                        <div className={className('homeNav-icon')}></div>
+                    <NavLink to="#" className={className('homeNav-link')}>
+                        <div className={className('homeNav-icon homeNav-icon--find')}></div>
                         <div className={className('homeNav-name')}>精彩发现</div>
                     </NavLink>
-                    <NavLink to="javascript:;" className={className('homeNav-link')}>
-                        <div className={className('homeNav-icon')}></div>
+                    <NavLink to="#" className={className('homeNav-link')}>
+                        <div className={className('homeNav-icon homeNav-icon--self')}></div>
                         <div className={className('homeNav-name')}>我关心的</div>
                     </NavLink>
                 </section>

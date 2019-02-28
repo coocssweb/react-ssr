@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import Layout from '../src/layout';
 import createStore from '../src/redux/store/createStore';
 
+
 function createEnv(path, opts) {
     let autoescape = opts.autoescape === undefined ? true : opts.autoescape;
     let noCache = opts.noCache || false;

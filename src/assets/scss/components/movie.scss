@@ -1,0 +1,29 @@
+.movie{
+    display: block;
+    text-decoration: none;
+    width: 45%;
+    margin-bottom: 20px;
+    color: #000;
+    &-photo{
+        display: block;
+        width: 100%;
+        padding-bottom: 145%;
+        background-size: cover;
+        background-position: center;
+    }
+    &-info{
+
+    }
+    &-title{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        margin-top: 10px;
+        font-weight: normal;
+    }
+    &-rating{
+        margin-top: 10px;
+        color: #999;
+    }
+}

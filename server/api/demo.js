@@ -82,9 +82,12 @@ class Demo extends Base {
     }
 
     fetchOneMovie (id) {
-        const movie = movies.map((item) => {
-            return item.id === id;
+        const movie = movies.filter((item) => {
+            if (item.id == id) {
+                return item;
+            }
         })[0];
+
         return new Promise((resolve, reject) => {
             resolve({
                 seo: {
@@ -93,7 +96,7 @@ class Demo extends Base {
                     description: movie.desc
                 },
                 data: {
-                    ...movie
+                    movie
                 }
             });
         });

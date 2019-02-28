@@ -5,8 +5,7 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 import Home from '../containers/home';
 // import Demo from '@containers/demo';
 // import Home from '../pages/home';
-import Column from '../pages/column';
-import Detail from '../pages/detail';
+import Detail from '../containers/detail';
 
 class Index extends Component {
     constructor(props) {
@@ -19,7 +18,6 @@ class Index extends Component {
             <div id="app" className={className('layout')}>
                 <Switch>
                     <Route path="/" component={Home} exact />
-                    <Route path="/column" component={Column} />
                     <Route path="/detail/:id" component={Detail} />
                 </Switch>
             </div>

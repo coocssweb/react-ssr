@@ -1,0 +1,67 @@
+.detail{
+    background-color: #ffffff;
+    padding: 20px;
+    &-title{
+        font-size: 24px;
+        line-height: 24px;
+        word-break: break-all;
+    }
+    &-info{
+        margin-top: 20px;
+    }
+    &-left{
+        margin-right: 120px;
+        line-height: 1.5;
+    }
+    &-rating{
+        color: $colorGray;
+    }
+    &-meta{
+        margin-top: 10px;
+    }
+    &-photo{
+        display: block;
+        width: 100px;
+        float: right;
+    }
+    &-btns{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    &-btn{
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid $colorOrange;
+        border-radius: 3px;
+        color: $colorOrange;
+        font-size: 15px;
+        text-align: center;
+        background-color: transparent;
+        flex: 1;
+        outline: none;
+        &:first-child{
+            margin-right: 20px;
+        }
+    }
+    &-desc{
+        margin-top: 30px;
+        line-height: 1.5;
+        color: $colorGray;
+    }
+    &-back{
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        border-radius: 3px;
+        color: $colorWhite;
+        background-color: $colorGreen;
+        font-size: 15px;
+        text-align: center;
+        outline: none;
+        border:none;
+        margin-top: 40px;
+    }
+}

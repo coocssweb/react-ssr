@@ -31,7 +31,10 @@ let detail = async  function (ctx, next) {
     const { id } = ctx.params;
     let result = await demoApi.fetchOneMovie(id);
     await ctx.render('index.html', {
-        ...result
+        seo: result.seo,
+        data: {
+            detail: result.data
+        }
     });
 
     await next();
