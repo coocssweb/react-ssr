@@ -15,7 +15,7 @@ class Index extends Component {
 
     render() {
         return (
-            <div className="">
+            <div id="app">
                 <div className="layout">
                     <div>Section Layout</div>
                     <ul className="links">

@@ -1,0 +1,15 @@
+module.js:529
+    throw err;
+    ^
+
+Error: Cannot find module 'browserslist'
+    at Function.Module._resolveFilename (module.js:527:15)
+    at Function.Module._load (module.js:476:23)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at _browserslist (/coocss/react-ssr/node_modules/_@babel_preset-env@7.3.4@@babel/preset-env/lib/normalize-options.js:20:39)
+    at Object.<anonymous> (/coocss/react-ssr/node_modules/_@babel_preset-env@7.3.4@@babel/preset-env/lib/normalize-options.js:80:50)
+    at Module._compile (module.js:624:30)
+    at Module._compile (/coocss/react-ssr/node_modules/_pirates@4.0.1@pirates/lib/index.js:99:24)
+    at Module._extensions..js (module.js:635:10)
+    at Object.newLoader [as .js] (/coocss/react-ssr/node_modules/_pirates@4.0.1@pirates/lib/index.js:104:7)
