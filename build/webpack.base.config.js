@@ -9,18 +9,18 @@ const _config = require('./config');
 module.exports = function (mode) {
     const configMode = _config[mode];
     const IS_DEVELOPMENT = mode === 'development';
+    const IS_LOCAL = mode === 'local';
 
     let webpackConfig = {
         cache: true,
         entry: {
-            vendor: ['classnames'],
             index: resolve('src', 'app.js')
         },
         output: {
             path: resolve('dist'),
             publicPath: configMode.publicPath,
-            filename: IS_DEVELOPMENT ? '[name].js' : '[name].[chunkhash].js',
-            chunkFilename: IS_DEVELOPMENT ?  '[name].js' : '[name].[chunkhash].js'
+            filename: configMode.noHash ? '[name].js' : '[name].[chunkhash].js',
+            chunkFilename: configMode.noHash ?  '[name].js' : '[name].[chunkhash].js'
         },
         module: {
             rules: [
@@ -55,11 +55,11 @@ module.exports = function (mode) {
                 },
                 {
                     test: /\.(png|jpg|gif|svg)$/,
-                    loader: `url-loader?limit=1&name=${configMode.imagePath}${IS_DEVELOPMENT ? '[name].[ext]' : '[name].[hash:8]'}.[ext]`
+                    loader: `url-loader?limit=1&name=${configMode.imagePath}${configMode.noHash ? '[name].[ext]' : '[name].[hash:8]'}.[ext]`
                 },
                 {
                     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                    loader: `file-loader?name=${configMode.publicPath}fonts/${IS_DEVELOPMENT ? '[name].[ext]' : '[name].[hash:8]'}.[ext]`
+                    loader: `file-loader?name=${configMode.publicPath}fonts/${configMode.noHash ? '[name].[ext]' : '[name].[hash:8]'}.[ext]`
                 },
                 {
                     test: /\.html$/,
@@ -86,9 +86,6 @@ module.exports = function (mode) {
                 'API': configMode.api,
             })
         ],
-        optimization: {
-
-        },
         resolve: {
             // 依赖
             alias: {
@@ -118,6 +115,8 @@ module.exports = function (mode) {
         webpackConfig.plugins.push(
             new webpack.HotModuleReplacementPlugin()
         );
+    } else if (IS_LOCAL) {
+
     } else {
         // 生产环境、测试环境
         // 采用增加更新的形式，出于更好的利用CDN缓存，采用的hash格式说明如下：

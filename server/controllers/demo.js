@@ -10,6 +10,7 @@ let home = async function (ctx, next) {
     await next();
 };
 
+// 演示页
 let demo = async function (ctx, next) {
     let result = await demoApi.fetchDemo();
     await ctx.render('index.html', {

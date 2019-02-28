@@ -39,7 +39,8 @@ function template(path, opts) {
             try {
                 ctx.response.body = ENV.render(view, Object.assign({ layout: reactDom }, ctx.state || {}, model || {}));
             } catch (err) {
-                ctx.response.body = ENV.render('error/500.html', {meta: err});
+                console.log(err);
+                ctx.response.body = ENV.render(view, {meta: err});
             }
             ctx.response.type = 'text/html';
         };

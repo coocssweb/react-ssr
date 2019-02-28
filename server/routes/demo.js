@@ -6,6 +6,6 @@ let router = new Router({
 });
 
 router.get('/', demoControl.home);
-router.get('/demo', demoControl.demo);
+router.get('demo', demoControl.demo);
 
 export default router;

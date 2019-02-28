@@ -13,6 +13,7 @@ module.exports = {
         publicPath: '',                         // 静态资源地址
         imagePath: '',                          // 图片资源地址
         devtool: 'false',                       // devtool
+        noHash: false,
     },
     // 测试环境
     test: {
@@ -21,6 +22,16 @@ module.exports = {
         publicPath: '',                         // 静态资源地址
         imagePath: '',                          // 图片资源地址
         devtool: 'false',                       // devtool
+        noHash: false,
+    },
+    // 开发环境构建，用于做ssr
+    local: {
+        env: 'local',                           // 环境
+        api: '',                                // api 接口地址
+        publicPath: 'http://localhost:8088/',   // 静态资源地址
+        imagePath: '',                          // 图片资源地址
+        devtool: 'false',                       // devtool,
+        noHash: true,
     },
     // 开发环境
     development: {
@@ -30,5 +41,6 @@ module.exports = {
         imagePath: '',                          // 图片资源地址
         port: '8088',                           // 开发端口
         devtool: 'source-map',                  // devtool
+        noHash: true,
     }
 };

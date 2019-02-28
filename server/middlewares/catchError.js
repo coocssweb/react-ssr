@@ -10,9 +10,9 @@ export default () => {
             const status = err.status || 500;
             ctx.status = status;
             if (status === 404) {
-                ctx.response.redirect(`${ctx.request.protocol}://${Config.host}/h5/404.html`);
+                // ctx.response.redirect(`${ctx.request.protocol}://${Config.host}/h5/404.html`);
             } else if (status === 500) {
-                ctx.response.redirect(`${ctx.request.protocol}://${Config.host}/h5/500.html`);
+                // ctx.response.redirect(`${ctx.request.protocol}://${Config.host}/h5/500.html`);
             }
         }
     };

@@ -1,5 +1,12 @@
-if (process.env.NODE_ENV === 'development') {
-    module.exports = require('./route.dev');
-} else {
-    module.exports = require('./route.prod');
-}
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Layout from '../layout';
+
+export default function () {
+    return (
+        <Router>
+            <Route path="/" component={Layout}>
+            </Route>
+        </Router>
+    );
+};

@@ -23,7 +23,10 @@ class Index extends Component {
                         <li><NavLink to="/demo">About</NavLink></li>
                     </ul>
                     <div className="content">
-
+                        <Switch>
+                            <Route path="/" component={Home} exact />
+                            <Route path="/demo" component={Demo} />
+                        </Switch>
                     </div>
                 </div>
             </div>
