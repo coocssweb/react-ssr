@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --config build/webpack.dev.config.js --open --hot",
-    "dev": "export NODE_ENV=development && nodemon ./server/index.js",
+    "server:dev": "export NODE_ENV=development && nodemon ./server/index.js",
     "server": "export NODE_ENV=production && nohup node ./server/index.js > nohup.log 2>&1 &",
     "build:local": "webpack --mode production --config build/webpack.local.config.js --progress --hide-modules",
     "build:test": "webpack --mode production --config build/webpack.test.config.js --progress --hide-modules",
