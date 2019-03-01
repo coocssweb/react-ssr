@@ -53,7 +53,6 @@ function template(path, opts) {
                     )
                 );
             } catch (err) {
-                console.log(err);
                 ctx.response.body = ENV.render(view, {meta: err});
             }
             ctx.response.type = 'text/html';

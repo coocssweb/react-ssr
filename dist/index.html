@@ -15,6 +15,9 @@
     <meta name="description" content="{{ description }}">
 </head>
 <body>
-    <div id="app"></div>
+{{ layout | safe }}
+<script type="text/javascript">
+    window['defaultRenderData'] = {{ data | dump | safe }};
+</script>
 <script type="text/javascript" src="http://localhost:8088/index.js"></script></body>
 </html>

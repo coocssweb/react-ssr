@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
 
 const {resolve} = require('./utils');
 const _config = require('./config');
@@ -99,7 +98,7 @@ module.exports = function (mode) {
             extensions: ['.js', '.jsx'],
         },
         // 第三方依赖，可以写在这里，不打包
-        externals: [nodeExternals()]
+        externals: {}
     };
 
 
