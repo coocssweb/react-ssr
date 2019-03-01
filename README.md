@@ -36,6 +36,9 @@ http://localhost:4322/api/movie/30163509
 
 ```
 ## 首页预览 和 浏览器源码
+
+访问 http://localhost:4322
+
 <div>
     <img src="https://coocssweb.github.io/photos/react-ssr/preview-01.jpg" align="center" title="首页" width="800">
 </div>

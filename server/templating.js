@@ -35,7 +35,7 @@ function template(path, opts) {
         ctx.render = function (view, model) {
             try {
                 const store = createStore(model.data);
-                const reactDom = renderToString(
+                const reactDomStr = renderToString(
                     <Provider store={ store }>
                         <StaticRouter location={ctx.request.url} context={model.data}>
                             <Layout />
@@ -45,7 +45,7 @@ function template(path, opts) {
 
                 ctx.response.body = ENV.render(view, Object.assign(
                         // layout组件节点渲染结果
-                        { layout: reactDom },
+                        { layout: reactDomStr },
                         // seo相关
                         model.seo || {},
                         // 服务端渲染的数据
