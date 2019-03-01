@@ -35,9 +35,13 @@ http://localhost:4322/api/home
 http://localhost:4322/api/movie/30163509
 
 ```
+## 首页预览 和 浏览器源码
 <div>
     <img src="https://coocssweb.github.io/photos/react-ssr/preview-01.jpg" align="center" title="首页" width="800">
 </div>
+
+
+## 详情页预览 和浏览器源码
 <div>
     <img src="https://coocssweb.github.io/photos/react-ssr/preview-02.jpg" align="center" title="详情页" width="800">
 </div>
