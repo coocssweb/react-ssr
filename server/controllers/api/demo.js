@@ -3,7 +3,7 @@ import demoApi from '../../api/demo.js';
 // 获取主页相关
 let fetchHome = async (ctx, next) => {
     let { id } = ctx.params;
-    let result = await demoApi.fetchColumn();
+    let result = await demoApi.fetchHome();
     ctx.body = JSON.stringify(result);
     await next();
 };

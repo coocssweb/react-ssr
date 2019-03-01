@@ -15,7 +15,8 @@ app.use(Convert(Cors()));
 app.use(BodyParser());
 app.use(catchError());
 app.use(timeLogger());
-app.use(templating('dist/views', {
+// 模板目录
+app.use(templating('dist/', {
     noCache: Config.noCache,
     watch: Config.watch
 }));

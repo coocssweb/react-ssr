@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Home from '../pages/home';
+import * as homeActions from '../redux/actions/home';
 
 function mapStateToProps (state) {
     let data = state['home'];
@@ -10,7 +11,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
     return {
-
+        fetchHome: () => dispatch(homeActions.fetchHome())
     };
 }
 

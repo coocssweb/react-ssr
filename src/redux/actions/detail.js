@@ -4,11 +4,11 @@
 import * as detailActionTypes from '../constants/detail';
 import demoApi from '../../api/demo';
 
-export const fetchOne = () => {
+export const fetchOne = (id) => {
     return {
-        type: [detailActionTypes.DETAIL_FETCH_REQUEST, detailActionTypes.DETAIL_FETCH_SUCCESS, detailActionTypes.DETAIL_FETCH_ERROR],
+        types: [detailActionTypes.DETAIL_FETCH_REQUEST, detailActionTypes.DETAIL_FETCH_SUCCESS, detailActionTypes.DETAIL_FETCH_ERROR],
         promise: () => {
-            return demoApi.fetchDetail();
+            return demoApi.fetchDetail(id);
         }
     };
 };

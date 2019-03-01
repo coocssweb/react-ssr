@@ -10,7 +10,22 @@ class Index extends Component {
         };
     }
 
-    component
+    static getDerivedStateFromProps (nextProps, prevState) {
+        return {
+            movie: nextProps.movie
+        };
+    }
+
+    shouldComponentUpdate (nextProps, prevState ) {
+        return this.state.movie.id !== prevState.movie.id
+    }
+
+    componentDidMount () {
+        const { id } = this.props.match.params;
+        if (id && this.state.movie.id !== id) {
+            this.props.fetchOne(id);
+        }
+    }
 
     handleTodoClick () {
         alert('想看');
@@ -21,7 +36,12 @@ class Index extends Component {
     }
 
     handleBackClick () {
-
+        const { history } = this.props;
+        if (history.length > 1) {
+            history.goBack();
+        } else {
+            history.replace('');
+        }
     }
 
     render() {
@@ -29,17 +49,19 @@ class Index extends Component {
         return (
             <div className={className('detail')}>
                 <h1 className={className('detail-title')}>{ movie.title }</h1>
-                <div className={className('detail-info clearfix')}>
-                    <img src={ movie.photo } className={className('detail-photo')} />
+                <section className={className('detail-info clearfix')}>
+                    <div className={className('detail-right')}>
+                        <img src={ movie.photo } className={className('detail-photo')}/>
+                    </div>
                     <div className={className('detail-left')}>
                         <div className={className('detail-rating')}>
-                             { movie.score } 分
+                             { movie.score }
                         </div>
                         <p className={className('detail-meta')}>
                             { movie.meta }
                         </p>
                     </div>
-                </div>
+                </section>
                 <div className={className('detail-btns')}>
                     <button className={className('detail-btn')}
                             onClick={this.handleTodoClick.bind(this)}>想看</button>

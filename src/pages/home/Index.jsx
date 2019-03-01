@@ -13,6 +13,19 @@ class Index extends Component {
         };
     }
 
+    static getDerivedStateFromProps (nextProps, prevState) {
+        return {
+            banner: nextProps.banner,
+            movies: nextProps.movies
+        }
+    }
+
+    componentDidMount () {
+        if (this.state.movies.length === 0) {
+            this.props.fetchHome();
+        }
+    }
+
     render() {
         const { state } = this;
         let banner = state.banner;

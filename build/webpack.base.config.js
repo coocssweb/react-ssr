@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const {resolve} = require('./utils');
 const _config = require('./config');
@@ -47,7 +48,7 @@ module.exports = function (mode) {
                     test: /\.scss$/,
                     include: resolve('src'),
                     use: [
-                        IS_DEVELOPMENT ? 'style-loader' : miniCssExtractPlugin.loader,
+                        (IS_DEVELOPMENT || IS_LOCAL) ? 'style-loader' : miniCssExtractPlugin.loader,
                         'css-loader',
                         'postcss-loader',
                         'sass-loader'
@@ -83,7 +84,7 @@ module.exports = function (mode) {
             // 注入环境变量，在代码内可以引用
             new webpack.DefinePlugin({
                 'NODE_ENV': configMode.env,
-                'API': configMode.api,
+                'process.env.API': JSON.stringify(configMode.api),
             })
         ],
         resolve: {
@@ -98,9 +99,7 @@ module.exports = function (mode) {
             extensions: ['.js', '.jsx'],
         },
         // 第三方依赖，可以写在这里，不打包
-        externals: {
-
-        }
+        externals: [nodeExternals()]
     };
 
 
@@ -116,7 +115,12 @@ module.exports = function (mode) {
             new webpack.HotModuleReplacementPlugin()
         );
     } else if (IS_LOCAL) {
-
+        webpackConfig.plugins.push(
+            new webpack.NamedModulesPlugin())
+        ;
+        webpackConfig.plugins.push(
+            new webpack.HotModuleReplacementPlugin()
+        );
     } else {
         // 生产环境、测试环境
         // 采用增加更新的形式，出于更好的利用CDN缓存，采用的hash格式说明如下：
@@ -125,7 +129,7 @@ module.exports = function (mode) {
 
         // 清空构建目录
         webpackConfig.plugins.push(
-            new cleanWebpackPlugin(['../dist'])
+            new cleanWebpackPlugin(['./dist'])
         );
 
         // 抽离css，命名采用contenthash

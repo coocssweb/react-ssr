@@ -6,6 +6,6 @@ let router = new Router({
 });
 router.get('/home', ApiControl.fetchHome);
 router.get('/column', ApiControl.fetchColumn);
-router.get('/movie', ApiControl.fetchOneMovie);
+router.get('/movie/:id', ApiControl.fetchOneMovie);
 
 export default router;

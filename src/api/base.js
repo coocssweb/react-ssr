@@ -1,4 +1,4 @@
-// import 'whatwg-fetch';
+import 'whatwg-fetch';
 class Base {
     request ({ path, data = {}, method = 'GET', requireLogin }) {
         const headers = {
@@ -9,18 +9,19 @@ class Base {
         let settings = {
             method,
             headers,
-            body: JSON.stringify(data),
             mode: 'cors'
         };
 
         let requestUrl = `${process.env.API}${path}`;
 
         return new Promise((resolve, reject) => {
-            // fetch(requestUrl, settings).then((response) => {
-            //     resolve(response.json());
-            // }).catch((error) => {
-            //     reject(error);
-            // });
+            fetch(requestUrl, settings).then((response) => {
+                return response.json();
+            }).then((response) => {
+                resolve(response.data);
+            }).catch((error) => {
+                reject(error);
+            });
         });
     }
 }

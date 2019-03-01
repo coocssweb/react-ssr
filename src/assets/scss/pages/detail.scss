@@ -19,10 +19,12 @@
     &-meta{
         margin-top: 10px;
     }
+    &-right{
+        float: right;
+    }
     &-photo{
         display: block;
         width: 100px;
-        float: right;
     }
     &-btns{
         margin-top: 30px;

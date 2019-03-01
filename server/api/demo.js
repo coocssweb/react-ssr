@@ -2,15 +2,15 @@ import Base from './base';
 // 影片信息
 const movies = [
     {
-        id: 1652592,
+        id: '1652592',
         title: '阿丽塔：战斗天使',
         photo: 'https://coocssweb.github.io/photos/react-ssr/movie-01.jpg',
         score: 7.6,
         meta: '122分钟 / 动作 / 科幻 / 冒险 / 罗伯特·罗德里格兹(导演) / 罗莎·萨拉查 / 克里斯托弗·沃尔兹 / 基恩·约翰逊 / 2019-02-22(中国大陆) 上映',
-        desc: '故事发生在遥远的26世纪，外科医生依德（克里斯托弗·瓦尔兹 Christoph Waltz 饰）在垃圾场里捡到了只剩下头部的机械少女将她带回家中，给她装上了本来为自己已故的女儿所准备的义体，并取名阿丽塔（罗莎·萨拉扎尔 Rosa Salazar 饰）。苏醒后的阿丽塔对这个五彩斑斓但却暴力而又残酷的世界产生了浓厚的兴趣，在结识了青年雨果（基恩·约翰逊 Keean Johnson 饰）后，阿丽塔开始接触名为机动球的运动，并在比赛中展现出了惊人的格斗天赋。<br>在废铁城居民们的头顶，漂浮着巨大的浮空城市撒冷，废铁城居民们的一切劳作和付出，都是为了给撒冷提供继续运作的燃料。在大财阀维克特（马赫沙拉·阿里 Mahershala Ali 饰）所设立的机动球比赛中，最终获得冠军的人能够获得前往撒冷生活的资格，阿丽塔决定利用自己的格斗天赋参加比赛，却被卷入了一个巨大的阴谋之中。',
+        desc: '故事发生在遥远的26世纪，外科医生依德（克里斯托弗·瓦尔兹 Christoph Waltz 饰）在垃圾场里捡到了只剩下头部的机械少女将她带回家中，给她装上了本来为自己已故的女儿所准备的义体，并取名阿丽塔（罗莎·萨拉扎尔 Rosa Salazar 饰）。',
     },
     {
-        id: 30163509,
+        id: '30163509',
         title: '飞驰人生',
         photo: 'https://coocssweb.github.io/photos/react-ssr/movie-02.jpg',
         score: 7.0,
@@ -18,7 +18,7 @@ const movies = [
         desc: '曾经在赛车界叱咤风云、如今却只能经营炒饭大排档的赛车手张驰（沈腾饰）决定重返车坛挑战年轻一代的天才。然而没钱没车没队友，甚至驾照都得重新考，这场笑料百出不断被打脸的复出之路，还有更多哭笑不得的窘境在等待着这位过气车神……',
     },
     {
-        id: 4840388,
+        id: '4840388',
         title: '新喜剧之王',
         photo: 'https://coocssweb.github.io/photos/react-ssr/movie-03.jpg',
         score: 5.88,
@@ -83,7 +83,7 @@ class Demo extends Base {
 
     fetchOneMovie (id) {
         const movie = movies.filter((item) => {
-            if (item.id == id) {
+            if (item.id === id) {
                 return item;
             }
         })[0];

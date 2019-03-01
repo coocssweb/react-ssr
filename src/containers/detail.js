@@ -11,9 +11,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
     return {
-        fetch: () => {
-            return dispatch(detailActions.fetchOne());
-        },
+        fetchOne: (id) => dispatch(detailActions.fetchOne(id)),
     };
 }
 
