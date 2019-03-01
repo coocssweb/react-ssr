@@ -9,6 +9,9 @@
 
 # 快速上手
 ```
+// 安装依赖
+npm install
+
 // 为了构建一个模板(dist/index.html)给koa模板引擎使用
 npm run build:local
 
