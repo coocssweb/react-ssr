@@ -35,7 +35,19 @@ http://localhost:4322/api/home
 http://localhost:4322/api/movie/30163509
 
 ```
+
+# 实现原理
+
+<div>
+    <img src="https://raw.githubusercontent.com/coocssweb/coocssweb.github.io/master/photos/react-ssr/how.jpeg" align="center" title="首页" width="800">
+</div>
+如果你想查看更多原理内容，可以看我的知乎。
+
+<a href="https://zhuanlan.zhihu.com/p/57856814">React SSR 实现原理</a>
+
+
 ## 首页预览 和 浏览器源码
+
 
 访问 http://localhost:4322
 
