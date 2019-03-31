@@ -3,6 +3,10 @@
   <p align="center" style="font-size: 0.2em">Delightful React Server-Side Rendering</p>
 </h1>
 
+# 演示
+基于这个demo扩展的做了个人博客。可以参考下
+http://www.shuxia123.com/
+
 # React SSR
 这是基于`React`、`React-Router`、`Redux`、`Koa2.0`实现的React服务端渲染方案。为了更好的演示，已实现一个简单的电影首页、电影详情页。
 数据资源是豆瓣上的资源。样式也参考了豆瓣的样式

@@ -11,7 +11,7 @@ const movies = [
     },
     {
         id: '30163509',
-        title: '飞驰人生',
+        title: '飞驰人生6',
         photo: 'https://coocssweb.github.io/photos/react-ssr/movie-02.jpg',
         score: 7.0,
         meta: '98分钟 / 喜剧 / 韩寒(导演) / 沈腾 / 黄景瑜 / 尹正 / 2019-02-05(中国大陆) 上映',

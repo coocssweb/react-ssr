@@ -13,6 +13,7 @@ module.exports = merge(baseConfig(mode.env), {
     devServer: {
         contentBase: resolve('dist'),
         hot: true,
+        disableHostCheck: true,
         port: mode.port
     }
 });

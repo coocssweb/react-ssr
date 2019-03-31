@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --config build/webpack.dev.config.js --open --hot",
+    "start": "webpack-dev-server --config build/webpack.dev.config.js --open --hot --https --watch-poll",
     "server:dev": "export NODE_ENV=development && nodemon ./server/index.js",
     "server": "export NODE_ENV=production && nohup node ./server/index.js > nohup.log 2>&1 &",
     "build:local": "webpack --mode production --config build/webpack.local.config.js --progress --hide-modules",
@@ -50,6 +50,7 @@
     "koa-cors": "0.0.16",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
     "log4js": "^3.0.5",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
