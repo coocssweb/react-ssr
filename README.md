@@ -3,7 +3,7 @@
   <p align="center" style="font-size: 0.2em">Delightful React Server-Side Rendering</p>
 </h1>
 
-# 演示
+# 线上DEMO演示
 基于这个demo扩展的做了个人博客。可以参考下
 http://www.shuxia123.com/
 
@@ -52,6 +52,29 @@ http://localhost:4322/api/movie/30163509
 
 <a href="https://zhuanlan.zhihu.com/p/57856814">React SSR 实现原理</a>
 
+
+# webpack依赖目录 与 nodejs依赖目录
+webpack中配置resolve.alias依赖目录，方便import
+
+```
+// build/webpack.base.config.js文件
+alias: {
+    '@scss': resolve('src/assets/scss'),
+    '@api': resolve('src/api'),
+    '@containers': resolve('src/containers'),
+    '@components': resolve('src/components')
+},
+```
+因此node下也需要配置一致的目录，否则会提示"@components 目录找不到"。这个可以通过 module-alias 进行配置。
+```
+// package.json 配置
+"_moduleAliases": {
+    "@scss": "src/assets/scss",
+    "@api": "src/api",
+    "@containers": "src/containers",
+    "@components": "src/components"
+}
+```
 
 ## 首页预览 和 浏览器源码
 
